@@ -22,10 +22,10 @@ do
     sed -i "s?<repo>?${GITHUB_REPOSITORY}?g" ${file}
 done
 
-## Search for <user> and replace it with $GITHUB_USER
-find ${workspace} -name '*.yaml' -type f -exec grep -l '<user>' {} \; | while read imagefile
+## Search for argadepp and replace it with $GITHUB_USER
+find ${workspace} -name '*.yaml' -type f -exec grep -l 'argadepp' {} \; | while read imagefile
 do
-    sed -i "s?<user>?${GITHUB_USER}?g" ${imagefile}
+    sed -i "s?argadepp?${GITHUB_USER}?g" ${imagefile}
 done
 
 ## Now that the files are updated, we commit it and push it up. Best effort :cross_fingers_emoji:
